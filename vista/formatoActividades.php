@@ -25,8 +25,10 @@ INNER JOIN unidadreceptora ON unidadreceptora.idUnidad = profesores.idUnidad WHE
   $var2 = $rowData["carrera"];
   $var3 = $rowData["nombreProfesor"] . $h . $rowData["apellidoPaterno"] . $h . $rowData["apellidoMmaterno"];
   $var4 = strtotime($rowData["fechaInicio"]);
+  $var5 = strtotime($rowData["fechaFin"]);
   $mes = date("m", $var4);
-  $var5 = $rowData["fechaFin"];
+  $mes1 = date("m", $var5);
+
   //$var1 = strtoupper($var1);
   //$var2 = strtoupper($var2);
   //$var3 = strtoupper($var3);
@@ -94,7 +96,83 @@ INNER JOIN unidadreceptora ON unidadreceptora.idUnidad = profesores.idUnidad WHE
   </tr>  
   <tr>
   	<td style = "text-align: center; background-color: #CAC7C6; ">Periodo servicio social:</td>
-  	<td colspan="3"><?php echo $rowData['fechaInicio']; ?> a <?php echo $rowData['fechaFin']; ?></td>	
+  	<td colspan="3"><?php 
+if ($mes == "01"){
+  echo "Enero";
+}
+if ($mes == "02"){
+  echo "Febrero";
+}
+if ($mes == "03"){
+  echo "Marzo";
+}
+if ($mes == "04"){
+  echo "Abril";
+}
+if ($mes == "05"){
+  echo "Mayo";
+}
+if ($mes == "06"){
+  echo "Junio";
+}
+if ($mes == "07"){
+  echo "Julio";
+}
+if ($mes == "08"){
+  echo "Agosto";
+}
+if ($mes == "09"){
+  echo "Septiembre";
+}
+if ($mes == "10"){
+  echo "Octubre";
+}
+if ($mes == "11"){
+  echo "Noviembre";
+}
+if ($mes == "12"){
+  echo "Diciembre";
+}
+?>
+ -
+<?php 
+if ($mes1 == "01"){
+  echo "Enero";
+}
+if ($mes1 == "02"){
+  echo "Febrero";
+}
+if ($mes1 == "03"){
+  echo "Marzo";
+}
+if ($mes1 == "04"){
+  echo "Abril";
+}
+if ($mes1 == "05"){
+  echo "Mayo";
+}
+if ($mes1 == "06"){
+  echo "Junio";
+}
+if ($mes1 == "07"){
+  echo "Julio";
+}
+if ($mes1 == "08"){
+  echo "Agosto";
+}
+if ($mes1 == "09"){
+  echo "Septiembre";
+}
+if ($mes1 == "10"){
+  echo "Octubre";
+}
+if ($mes1 == "11"){
+  echo "Noviembre";
+}
+if ($mes1 == "12"){
+  echo "Diciembre";
+}
+?> </td>	
   </tr>    
   <tr>
   	<td colspan="4" style = "text-align: center; background-color: #CAC7C6; ">INFORMACIÓN DE LA UNIDAD REPECTORA</td>

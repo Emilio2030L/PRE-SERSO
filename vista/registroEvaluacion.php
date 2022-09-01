@@ -39,7 +39,7 @@
     <link rel="stylesheet" href="../vista/style/estilos.css" />
 
 
-    <title>Hello, world!</title>
+    <title>Servicio social</title>
   </head>
   <body class="">
     <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
@@ -83,14 +83,12 @@
                   while ($row = mysqli_fetch_array($getnombreA1)) {    
                     $idAlt=$row['idAlta'];
                     
-                      if ($idA == $idAlt) { ?>
+                      if ($idAlt == $idA) { ?>
                           <li><a class="dropdown-item" href="../vista/editarResumen.php">Editar registro de actividades</a></li>
                 <?php     
-                      } else { ?>
+                      }} if($idAlt != $idA) { ?>
                         <li><a class="dropdown-item" href="../vista/agregarResumen.php">Registro de actividades</a></li>
-                <?php   
-                      }
-                  }?>
+                <?php } ?>
               </ul>
             </li>
           </ul>
@@ -104,12 +102,13 @@
         </div>
       </div>
     </nav>
-
-    <h1 class="font-weight-bold mb-4 text-center">Evaluación encargado</h1>
+    <h1 class="font-weight-bold mb-4 text-center p-4">Sistema web servicio social UPEMOR</h1>
+    <h5 class="font-weight-bold mb-4 text-center">Evaluación encargado</h5>
     <!-- Optional JavaScript; choose one of the two! -->
 
     <main>
-    <form class="formulario" id="formulario" method="post" action="../vista/evaluacionEncargado.php">
+    <form class="formulario" id="formulario" method="post" action="../control/agregarEvaluacion.php">
+
       <!-- Grupo:  -->
       <div class="formulario_grupo" id="grupo_pre1">
         <label for="pre1" class="formulario__label">¿Consideras que la persona responsable de tu Servicio Social, tuvos los conocimientos necesarios para el desarrollo de tus actividades que te fueron encomendadas?</label>
@@ -241,6 +240,26 @@
         </div>
         <p class="formulario__input-error"></p>
       </div>
+
+      <!-- Grupo:   -->
+      <div class="formulario__grupo" id="grupo__matriculaAlumno">
+        <label for="matriculaAlumno" class="formulario__label">Matricula alumno:</label>
+        <div class="formulario__grupo-input">
+          <input type="text" class="formulario__input" name="matriculaAlumno" id="matriculaAlumno" value="<?php echo $rowData7["matriculaAlumno"] ?>">
+          <i class="formulario__validacion-estado fas fa-times-circle"></i>
+        </div>
+        <p class="formulario__input-error"></p>
+      </div>  
+
+      <!-- Grupo:   -->
+      <div class="formulario__grupo" id="grupo__idUnidad">
+        <label for="idUnidad" class="formulario__label">Id Unidad:</label>
+        <div class="formulario__grupo-input">
+          <input type="text" class="formulario__input" name="idUnidad" id="idUnidad" value="<?php echo $rowData7["idUnidad"] ?>">
+          <i class="formulario__validacion-estado fas fa-times-circle"></i>
+        </div>
+        <p class="formulario__input-error"></p>
+      </div> 
 
       <div class="formulario__mensaje" id="formulario__mensaje">
         <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>

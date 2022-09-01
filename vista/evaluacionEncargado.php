@@ -9,15 +9,6 @@ require("../conexion/connect_db.php");
     header("Location:../vista/indexAlumno.php");
   }
 
-  $p1 = $_POST['pre1'];
-  $p2 = $_POST['pre2'];
-  $p3 = $_POST['pre3'];
-  $p4 = $_POST['pre4'];
-  $p5 = $_POST['pre5'];
-  $p6 = $_POST['pre6'];
-  $p7 = $_POST['pre7'];
-  $p8 = $_POST['pre8'];
-  $p9 = $_POST['pre9'];
 
   $nom = $_SESSION['nombreAlumno'];
   $ma = $_SESSION['matriculaAlumno'];
@@ -25,7 +16,7 @@ require("../conexion/connect_db.php");
   $resultAll3 = mysqli_query($mysqli," SELECT foto FROM imagenes WHERE estado = '1' && lugarImg = 'Logotipo' ORDER BY idImg DESC LIMIT 1; ");
   $rowData2 = mysqli_fetch_array($resultAll3);
 
-  $resultAll = mysqli_query($mysqli,"SELECT * FROM altalumno INNER JOIN alumnos ON alumnos.matriculaAlumno = altalumno.matriculaAlumno INNER JOIN programaeducativo ON programaeducativo.idPrograma = alumnos.idPrograma INNER JOIN profesores ON profesores.matriculaProfesor = altalumno.matriculaProfesor INNER JOIN unidadreceptora ON unidadreceptora.idUnidad = profesores.idUnidad where alumnos.matriculaAlumno = 'VVFH22SERSO';");  
+  $resultAll = mysqli_query($mysqli,"SELECT * FROM evaluacionunidad INNER JOIN unidadreceptora ON unidadreceptora.idUnidad = evaluacionunidad.idUnidad INNER JOIN profesores ON profesores.idUnidad = unidadreceptora.idUnidad INNER JOIN alumnos ON alumnos.matriculaAlumno = evaluacionunidad.matriculaAlumno INNER JOIN programaeducativo ON programaeducativo.idPrograma = alumnos.idPrograma WHERE alumnos.matriculaAlumno = '$ma' ORDER BY idEvaluacionUnidad DESC LIMIT 1");  
   $rowData = mysqli_fetch_array($resultAll);
 
   $h = " ";
@@ -127,39 +118,39 @@ require("../conexion/connect_db.php");
   </tr>
   <tr>
     <td colspan="3">¿Consideras que la persona responsable de tu Servicio Social, tuvos los conocimientos necesarios para el desarrollo de tus actividades que te fueron encomendadas?</td>
-    <td style="text-align: center;"><?php echo $p1 ?></td>
+    <td style="text-align: center;"><?php echo $rowData["pre1"] ?></td>
   </tr>
     <tr>
     <td colspan="3">¿La organización te proporcionó insumos e información necesaria para el desarrollo y logro de tus actividades encomendadas en tu servicio social?</td>
-    <td style="text-align: center;"><?php echo $p2 ?></td>
+    <td style="text-align: center;"><?php echo $rowData["pre2"] ?></td>
   </tr>
     <tr>
     <td colspan="3">¿La organización te proporcionó equipo y herramientas necesarias para el desarrollo de tu servicio social?</td>
-    <td style="text-align: center;"><?php echo $p3 ?></td>
+    <td style="text-align: center;"><?php echo $rowData["pre3"] ?></td>
   </tr>
   <tr>
     <td colspan="3">¿El número de horas que estuviste en la organización fueron adecuadas para lograr las actividades de tu servicio social?</td>
-    <td style="text-align: center;"><?php echo $p4 ?></td>
+    <td style="text-align: center;"><?php echo $rowData["pre4"] ?></td>
   </tr>
   <tr>
     <td colspan="3">¿Consideras que en esta organización existe equidad de género e igualdad laboral?</td>
-    <td style="text-align: center;"><?php echo $p5 ?></td>
+    <td style="text-align: center;"><?php echo $rowData["pre5"] ?></td>
   </tr>
   <tr>
     <td colspan="3">¿Recomendarias a esta organización para que otros estudiantes realicen el servicio social?</td>
-    <td style="text-align: center;"><?php echo $p6 ?></td>
+    <td style="text-align: center;"><?php echo $rowData["pre6"] ?></td>
   </tr>
   <tr>
     <td colspan="3">Si la organización donde realizaste tu proyecto te diese la oportunidad de formar parte de sus colaboradores ¿Te interesaria o gustaria trabajar ahi?</td>
-    <td style="text-align: center;"><?php echo $p7 ?></td>
+    <td style="text-align: center;"><?php echo $rowData["pre7"] ?></td>
   </tr>
   <tr>
     <td colspan="3">El trato del personal hacia ti fue:</td>
-    <td style="text-align: center;"><?php echo $p8 ?></td>
+    <td style="text-align: center;"><?php echo $rowData["pre8"] ?></td>
   </tr>
   <tr>
   <td>Observaciones:</td>
-  <td colspan="3"><?php echo $p9 ?></td>
+  <td colspan="3"><?php echo $rowData["pre9"] ?></td>
   </tr>
 
 </table>

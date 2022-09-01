@@ -74,11 +74,11 @@
         </div>
       </div>
     </nav>
-
-    <h1 class="text-dark text-center p-3">Evaluación alumno</h1>
+    <h1 class="font-weight-bold mb-4 text-center p-4">Sistema web servicio social UPEMOR</h1>
+    <h5 class="text-dark text-center p-3">Evaluación alumno</h5>
 
     <main>
-    <form class="formulario" id="formulario" method="post" action="../vista/formatoEvaluacionAlu.php">
+    <form class="formulario" id="formulario" method="post" action="../control/agregaEvaluarAlumno.php">
       <!-- Grupo: matricula Alumno-->
       <div class="formulario__grupo" id="grupo__idAlta">
         <label for="idAlta" class="formulario__label">id Alta</label>

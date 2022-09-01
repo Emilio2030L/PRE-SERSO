@@ -34,7 +34,7 @@
     <link rel="stylesheet" href="../vista/style/estilos.css" />
 
 
-    <title>Hello, world!</title>
+    <title>Servicio social</title>
   </head>
   <body class="">
     <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
@@ -63,7 +63,7 @@
               <a class="nav-link active" aria-current="page" href="../vista/avanceActividades.php">Avance de actividades</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="../control/evaluacionAlumno.php">Evaluacion Alumnos</a>
+              <a class="nav-link active" aria-current="page" href="../vista/evaluacionAlumno.php">Evaluación Alumnos</a>
             </li>
             </ul>
           <ul class="navbar-nav">
@@ -76,8 +76,8 @@
         </div>
       </div>
     </nav>
-
-    <h1 class="text-dark text-center">Edición de actividades</h1>
+    <h1 class="font-weight-bold mb-4 text-center p-4">Sistema web servicio social UPEMOR</h1>
+    <h5 class="text-dark text-center">Edición de actividades</h5>
 
     <main>
     <form class="formulario" id="formulario" method="post" action="../control/cambiarAsignacion.php">
@@ -103,7 +103,7 @@
 
       <!-- Grupo: Fecha asignacion  -->
       <div class="formulario__grupo" id="grupo__fecha">
-        <label for="fecha" class="formulario__label">Ingrese fecha limite:</label>
+        <label for="fecha" class="formulario__label">Ingrese fecha límite:</label>
         <div class="formulario__grupo-input">
           <input type="date" class="formulario__input" name="fecha" id="fecha" value="<?php echo $row['fecha']  ?>" >
           <i class="formulario__validacion-estado fas fa-times-circle"></i>

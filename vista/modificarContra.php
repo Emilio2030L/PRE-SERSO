@@ -16,11 +16,12 @@
 
   $sql="SELECT * FROM alumnos WHERE matriculaAlumno='$ma'";
   $query=mysqli_query($mysqli,$sql);
-  $row=mysqli_fetch_array($query);
+  $row1=mysqli_fetch_array($query);
 
   $consulta="SELECT * FROM altalumno WHERE matriculaAlumno='$ma'";
   $query5=mysqli_query($mysqli,$consulta);
   $row5=mysqli_fetch_array($query5);
+  $idA = $row5['idAlta'];
 
 ?>
 <html lang="en">
@@ -35,7 +36,7 @@
     <link rel="stylesheet" href="../vista/style/estilos.css" />
 
 
-    <title>Hello, world!</title>
+    <title>Servicio social</title>
   </head>
   <body class="">
     <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
@@ -73,7 +74,18 @@
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="../vista/registroAvance.php">Avance de actividades</a></li>
-                <li><a class="dropdown-item" href="../vista/agregarResumen.php">Registro de actividades</a></li>
+                <?php
+                  $getnombreA = "SELECT * FROM registroactividades";
+                  $getnombreA1 = mysqli_query($mysqli,$getnombreA);
+                  while ($row = mysqli_fetch_array($getnombreA1)) {    
+                    $idAlt=$row['idAlta'];
+                    
+                      if ($idAlt == $idA) { ?>
+                          <li><a class="dropdown-item" href="../vista/editarResumen.php">Editar registro de actividades</a></li>
+                <?php     
+                      }} if($idAlt != $idA) { ?>
+                        <li><a class="dropdown-item" href="../vista/agregarResumen.php">Registro de actividades</a></li>
+                <?php } ?>
               </ul>
             </li>
           </ul>
@@ -87,8 +99,8 @@
         </div>
       </div>
     </nav>
-
-    <h1 class="font-weight-bold mb-4 text-center p-3">Modificar contraseña alumno</h1>
+    <h1 class="font-weight-bold mb-4 text-center p-4">Sistema web servicio social UPEMOR</h1>
+    <h5 class="font-weight-bold mb-4 text-center p-3">Modificar contraseña alumno</h5>
 
     <main>
     <form class="formulario" action="../control/cambiarPassword.php" method="post">
@@ -96,7 +108,7 @@
       <div class="formulario__grupo" id="grupo__matriculaAlumno">
         <label for="matriculaAlumno" class="formulario__label">Matricula alumno</label>
         <div class="formulario__grupo-input">
-          <input readonly type="text" class="formulario__input" name="matriculaAlumno" id="matriculaAlumno" value="<?php echo $row['matriculaAlumno']  ?>">
+          <input readonly type="text" class="formulario__input" name="matriculaAlumno" id="matriculaAlumno" value="<?php echo $row1['matriculaAlumno']  ?>">
           <i class="formulario__validacion-estado fas fa-times-circle"></i>
         </div>
         <p class="formulario__input-error">ingrese</p>
@@ -106,7 +118,7 @@
       <div class="formulario__grupo" id="grupo__nombreAlumno">
         <label for="nombreAlumno" class="formulario__label">Nombre alumno</label>
         <div class="formulario__grupo-input">
-          <input readonly type="text" class="formulario__input" name="nombreAlumno" id="nombreAlumno" value="<?php echo $row['nombreAlumno']  ?>">
+          <input readonly type="text" class="formulario__input" name="nombreAlumno" id="nombreAlumno" value="<?php echo $row1['nombreAlumno']  ?>">
           <i class="formulario__validacion-estado fas fa-times-circle"></i>
         </div>
         <p class="formulario__input-error">El nombre tiene que ser de 4 a 20 dígitos y solo puede contener numeros, letras y guion bajo.</p>
@@ -116,7 +128,7 @@
       <div class="formulario__grupo" id="grupo__apellidoPpaterno">
         <label for="apellidoPpaterno" class="formulario__label">Apellido paterno</label>
         <div class="formulario__grupo-input">
-          <input readonly type="text" class="formulario__input" name="apellidoPpaterno" id="apellidoPpaterno" value="<?php echo $row['apellidoPpaterno']  ?>">
+          <input readonly type="text" class="formulario__input" name="apellidoPpaterno" id="apellidoPpaterno" value="<?php echo $row1['apellidoPpaterno']  ?>">
           <i class="formulario__validacion-estado fas fa-times-circle"></i>
         </div>
         <p class="formulario__input-error">El nombre tiene que ser de 4 a 20 dígitos y solo puede contener numeros, letras y guion bajo.</p>
@@ -126,38 +138,35 @@
       <div class="formulario__grupo" id="grupo__apellidoMaterno">
         <label for="apellidoMaterno" class="formulario__label">Apellido Materno</label>
         <div class="formulario__grupo-input">
-          <input readonly type="text" class="formulario__input" name="apellidoMaterno" id="apellidoMaterno" value="<?php echo $row['apellidoMaterno']  ?>">
+          <input readonly type="text" class="formulario__input" name="apellidoMaterno" id="apellidoMaterno" value="<?php echo $row1['apellidoMaterno']  ?>">
           <i class="formulario__validacion-estado fas fa-times-circle"></i>
         </div>
         <p class="formulario__input-error">El apellido M tiene que ser de 4 a 20 dígitos y solo puede contener numeros, letras y guion bajo.</p>
       </div>
 
-      <!-- Grupo: Nuevo password -->
+      <!-- Grupo: Contraseña -->
       <div class="formulario__grupo" id="grupo__passwordAlumno">
-        <label for="passwordAlumno" class="formulario__label">Nueva contraseña:</label>
+        <label for="passwordAlumno" class="formulario__label">Nueva contraseña</label>
         <div class="formulario__grupo-input">
           <input type="password" class="formulario__input" name="passwordAlumno" id="passwordAlumno">
           <i class="formulario__validacion-estado fas fa-times-circle"></i>
         </div>
-        <p class="formulario__input-error"></p>
+        <p class="formulario__input-error">La contraseña tiene que ser de 4 a 12 dígitos.</p>
       </div>
 
       <div class="formulario__mensaje" id="formulario__mensaje">
         <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
       </div>
 
-      <div class="formulario__grupo formulario__grupo-btn-enviar">
+       <div class="formulario__grupo formulario__grupo-btn-enviar">
         <input type="submit" class="formulario__btn" value="Registrar" name="btnReg">
         <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
       </div>
     </form>
     </main>
 
-    <!-- Optional JavaScript; choose one of the two! -->
-
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>

@@ -30,14 +30,21 @@ require("../conexion/connect_db.php");
   $var3 = $rowData["nombreProfesor"] . $h . $rowData["apellidoPaterno"] . $h . $rowData["apellidoMmaterno"];
   //asignamos la fecha de incio del servicio social
   $var4 = strtotime($rowData["fechaInicio"]);
+  $var6 = strtotime($rowData["fechaFin"]);
   //obtencion del mes
   $mes = date("m", $var4);
+  $mes1 = date("m", $var6);
+  $DiaSem = date('d', time()); 
+  $Mess = date('m', time());
+  $an = date('y', time());
+
   //asignamos a var 5 fecha fin
   $var5 = $rowData["fechaFin"];
   //funcion stroupper para mayusculas
   $var1 = strtoupper($var1);
   $var2 = strtoupper($var2);
   $var3 = strtoupper($var3);
+
   //borramos el buffer para despues asignar a una variable y crear el PDF
   ob_start();
 ?>
@@ -59,11 +66,52 @@ require("../conexion/connect_db.php");
 	<img src="<?php echo $rowData2['foto']; ?>" alt="logo" width="170">
 </div>
 <div ALIGN=right>
-<h1> LUGAR Y FECHA DE EXPEDICIÓN </h1>
+<h1> <?php echo "Jiutepec, Morelos a $DiaSem de ";?>  
+<?php 
+
+if ($Mess == "01"){
+  echo "Enero";
+}
+if ($Mess == "02"){
+  echo "Febrero";
+}
+if ($Mess == "03"){
+  echo "Marzo";
+}
+if ($Mess == "04"){
+  echo "Abril";
+}
+if ($Mess == "05"){
+  echo "Mayo";
+}
+if ($Mess == "06"){
+  echo "Junio";
+}
+if ($Mess == "07"){
+  echo "Julio";
+}
+if ($Mess == "08"){
+  echo "Agosto";
+}
+if ($Mess == "09"){
+  echo "Septiembre";
+}
+if ($Mess == "10"){
+  echo "Octubre";
+}
+if ($Mess == "11"){
+  echo "Noviembre";
+}
+if ($Mess == "12"){
+  echo "Diciembre";
+}
+
+?>
+<?php echo " de $an."; ?> </h1>
 <h1> Asunto: Carta de aceptación del servicio social </h1>
 </div>
 <div ALIGN=letf>
-<h1> Lic. Naylete Priscilia Segura DíazDirectora de Vinculación </h1>
+<h1> Lic. Naylete Priscilia Segura Díaz Directora de Vinculación </h1>
 <h1> Universidad Politécnica del Estado de Morelos </h1>
 <h1> Presente: </h1>
 </div>
@@ -74,7 +122,85 @@ Por éste medio permito informarle que el alumno(a) <?php echo $var1 ?>, con nú
 <?php echo $var2 ?> de la Universidad Politécnica del Estado de
 Morelos UPEMOR ha sido aceptado para realizar su Servicio Social
 reglamentario en esta Organización, desarrollando tareas diversas,
-cubriendo un total de 480 hrs en el periodo de <?php echo $mes; ?> a <?php echo $var5; ?> DEBERÁN SER 6 MESES COMPLETOS.
+cubriendo un total de 480 hrs en el periodo de 
+<?php 
+if ($mes == "01"){
+  echo "Enero";
+}
+if ($mes == "02"){
+  echo "Febrero";
+}
+if ($mes == "03"){
+  echo "Marzo";
+}
+if ($mes == "04"){
+  echo "Abril";
+}
+if ($mes == "05"){
+  echo "Mayo";
+}
+if ($mes == "06"){
+  echo "Junio";
+}
+if ($mes == "07"){
+  echo "Julio";
+}
+if ($mes == "08"){
+  echo "Agosto";
+}
+if ($mes == "09"){
+  echo "Septiembre";
+}
+if ($mes == "10"){
+  echo "Octubre";
+}
+if ($mes == "11"){
+  echo "Noviembre";
+}
+if ($mes == "12"){
+  echo "Diciembre";
+}
+?>
+ a 
+<?php 
+if ($mes1 == "01"){
+  echo "Enero";
+}
+if ($mes1 == "02"){
+  echo "Febrero";
+}
+if ($mes1 == "03"){
+  echo "Marzo";
+}
+if ($mes1 == "04"){
+  echo "Abril";
+}
+if ($mes1 == "05"){
+  echo "Mayo";
+}
+if ($mes1 == "06"){
+  echo "Junio";
+}
+if ($mes1 == "07"){
+  echo "Julio";
+}
+if ($mes1 == "08"){
+  echo "Agosto";
+}
+if ($mes1 == "09"){
+  echo "Septiembre";
+}
+if ($mes1 == "10"){
+  echo "Octubre";
+}
+if ($mes1 == "11"){
+  echo "Noviembre";
+}
+if ($mes1 == "12"){
+  echo "Diciembre";
+}
+?> 
+DEBERÁN SER 6 MESES COMPLETOS.
 </p>
 <p style = "font-size: 20px; text-align: justify ">
 El alumno estará a cargo de <?php echo $var3 ?> quien será la persona autorizada para la firma de los

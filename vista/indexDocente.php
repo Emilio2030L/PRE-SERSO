@@ -31,9 +31,10 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="../vista/style/estilos.css" />
+    <link rel="stylesheet" href="../vista/style/estilos1.css" />
 
-
-    <title>Hello, world!</title>
+    <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+    <title>Servicio social</title>
   </head>
   <body class="">
     <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
@@ -62,7 +63,7 @@
               <a class="nav-link active" aria-current="page" href="../vista/avanceActividades.php">Avance de actividades</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="../vista/evaluacionAlumno.php">Evaluacion Alumnos</a>
+              <a class="nav-link active" aria-current="page" href="../vista/evaluacionAlumno.php">Evaluación Alumnos</a>
             </li>
             </ul>
           <ul class="navbar-nav">
@@ -236,4 +237,35 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     -->
   </body>
+
+    <footer class="pie-pagina">
+        <div class="grupo-1">
+            <div class="box">
+                <figure>
+                    <a href="#">
+                        <img src="<?php echo $rowData['foto']; ?>" alt="Logo de SLee Dw">
+                    </a>
+                </figure>
+            </div>
+            <div class="box">
+                <h2>SOBRE NOSOTROS</h2>
+                <p>Dirección: Boulevard Cuauhnáhuac #566, Col. Lomas del Texcal, Jiutepec, Morelos. CP 62550</p>
+                <p>Tel: (777) 229-3517 </p>        
+                <p>Email: informes@upemor.edu.mx</p>
+            </div>
+            <div class="box">
+                <h2>SIGUENOS</h2>
+                <div class="red-social">
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-instagram"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-youtube"></a>
+                </div>
+            </div>
+        </div>
+        <div class="grupo-2">
+            <small>&copy; 2022 <b>Aslin Emilio Lopez Mancillas</b> - Todos los Derechos Reservados.</small>
+        </div>
+    </footer>
+
 </html>

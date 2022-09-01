@@ -33,8 +33,7 @@
     <link rel="stylesheet" href="../vista/style/estilos.css" />
 
 
-    <title>Hello, world!</title>
-  </head>
+    <title>Servicio social</title>  </head>
   <body class="">
     <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
       <div class="container-fluid">
@@ -62,7 +61,7 @@
               <a class="nav-link active" aria-current="page" href="../vista/avanceActividades.php">Avance de actividades</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="../control/evaluacionAlumno.php">Evaluacion Alumnos</a>
+              <a class="nav-link active" aria-current="page" href="../vista/evaluacionAlumno.php">Evaluación Alumnos</a>
             </li>
             </ul>
           <ul class="navbar-nav">

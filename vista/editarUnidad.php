@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="../vista/style/estilos.css" />
 
 
-    <title>Hello, world!</title>
+    <title>Servicio social</title>
   </head>
   <body class="">
     <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
@@ -53,7 +53,7 @@
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="../vista/registroDocente.php">Docente</a></li>
-                <li><a class="dropdown-item" href="../vista/registroUnidad.php">Institución</a></li>
+                <li><a class="dropdown-item" href="../vista/registroUnidad.php">Unidad receptora</a></li>
                 <li><a class="dropdown-item" href="../vista/programaEducativo.php">Programa Educativo</a></li>
               </ul>
             </li>
@@ -80,8 +80,8 @@
         </div>
       </div>
     </nav>
-
-    <h1 class="text-dark text-center">Registro unidad receptora</h1>
+    <h1 class="font-weight-bold mb-4 text-center p-4">Sistema web servicio social UPEMOR</h1>
+    <h5 class="text-dark text-center">Registro unidad receptora</h5>
 
     <main>
     <form class="formulario" id="formulario">

@@ -31,10 +31,13 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="../vista/style/estilos.css" />
+    <link rel="stylesheet" href="../vista/style/estilos1.css" />
 
+    <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
 
-    <title>Hello, world!</title>
+    <title>Servicio social</title>
   </head>
+  <section>
   <body class="">
     <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
       <div class="container-fluid">
@@ -55,7 +58,7 @@
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="../vista/registroDocente.php">Docente</a></li>
-                <li><a class="dropdown-item" href="../vista/registroUnidad.php">Institución</a></li>
+                <li><a class="dropdown-item" href="../vista/registroUnidad.php">Unidad receptora</a></li>
                 <li><a class="dropdown-item" href="../vista/programaEducativo.php">Programa Educativo</a></li>
               </ul>
             </li>
@@ -91,10 +94,10 @@
         <thead class="table-dark table-borderless">
             <th style="text-align: center;">Id</th>
             <th style="text-align: center">Nombre</th>
-            <th style="text-align: center">Dirección</th>
-            <th style="text-align: center">Telefono</th>
-            <th style="text-align: center" >Giro</th>
-            <th style="text-align: center"  >N. Trabajadores</th>
+            <th style="text-align: center">Paterno</th>
+            <th style="text-align: center">Materno</th>
+            <th style="text-align: center">Género</th>
+            <th style="text-align: center" >Puesto</th>
             <th style="text-align: center">Editar</th>
             <th style="text-align: center">Eliminar</th>
         </thead>
@@ -337,5 +340,36 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     -->
-  </body>
+    </body>
+    </section>
+      <footer class="pie-pagina">
+        <div class="grupo-1">
+            <div class="box">
+                <figure>
+                    <a href="#">
+                        <img src="<?php echo $rowData['foto']; ?>" alt="Logo de SLee Dw">
+                    </a>
+                </figure>
+            </div>
+            <div class="box">
+                <h2>SOBRE NOSOTROS</h2>
+                <p>Dirección: Boulevard Cuauhnáhuac #566, Col. Lomas del Texcal, Jiutepec, Morelos. CP 62550</p>
+                <p>Tel: (777) 229-3517 </p>        
+                <p>Email: informes@upemor.edu.mx</p>
+            </div>
+            <div class="box">
+                <h2>SIGUENOS</h2>
+                <div class="red-social">
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-instagram"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-youtube"></a>
+                </div>
+            </div>
+        </div>
+        <div class="grupo-2">
+            <small>&copy; 2022 <b>Aslin Emilio Lopez Mancillas</b> - Todos los Derechos Reservados.</small>
+        </div>
+    </footer>
+
 </html>

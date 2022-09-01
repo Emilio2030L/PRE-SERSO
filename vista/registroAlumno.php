@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="../vista/style/estilos.css" />
 
 
-    <title>Hello, world!</title>
+    <title>Servicio social</title>
   </head>
   <body class="">
     <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
@@ -54,7 +54,7 @@
               <a class="nav-link active" aria-current="page" href="../vista/avanceActividades.php">Avance de actividades</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="../control/evaluacionAlumno.php">Evaluacion Alumnos</a>
+              <a class="nav-link active" aria-current="page" href="../vista/evaluacionAlumno.php">Evaluación Alumnos</a>
             </li>
             </ul>
           <ul class="navbar-nav">
@@ -67,8 +67,8 @@
         </div>
       </div>
     </nav>
-
-    <h1 class="text-dark text-center">Registro alumnos</h1>
+    <h1 class="font-weight-bold mb-4 text-center p-4">Sistema web servicio social UPEMOR</h1>
+    <h5 class="text-dark text-center">Registro alumnos</h5>
 
     <main>
     <form class="formulario" id="formulario">
@@ -139,14 +139,6 @@
                     <select name="genero" class="formulario__input" id="genero">
                         <option value="Hombre" selected>Hombre</option>            
                         <option value="Mujer">Mujer</option>
-                        <option value="Heterosexual">Heterosexual</option>            
-                        <option value="Bisexual">Bisexual</option>
-                        <option value="Transformistas">Transformistas</option>            
-                        <option value="Pansexual">Pansexual</option>
-                        <option value="Asexual">Asexual</option>
-                        <option value="Trans">Trans</option>
-                        <option value="Transexual">Transexual</option>
-                        <option value="Trasvesti">Trasvesti</option>
                     </select> 
           <i class="formulario__validacion-estado fas fa-times-circle"></i>
         </div>

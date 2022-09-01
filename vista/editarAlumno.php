@@ -32,7 +32,7 @@
     <link rel="stylesheet" href="../vista/style/estilos.css" />
 
 
-    <title>Hello, world!</title>
+    <title>Servicio social</title>
   </head>
   <body class="">
     <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
@@ -61,7 +61,7 @@
               <a class="nav-link active" aria-current="page" href="../vista/avanceActividades.php">Avance de actividades</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="../control/evaluacionAlumno.php">Evaluacion Alumnos</a>
+              <a class="nav-link active" aria-current="page" href="../vista/evaluacionAlumno.php">Evaluación Alumnos</a>
             </li>
             </ul>
           <ul class="navbar-nav">
@@ -74,14 +74,14 @@
         </div>
       </div>
     </nav>
-
-    <h1 class="text-dark text-center p-3">Editar alumno</h1>
+    <h1 class="font-weight-bold mb-4 text-center p-4">Sistema web servicio social UPEMOR</h1>
+    <h5 class="text-dark text-center p-3">Editar alumno</h4>
 
     <main>
     <form class="formulario" id="formulario">
       <!-- Grupo: Estado liberacion -->
       <div class="formulario_grupo" id="grupo_estadoliberacion">
-        <label for="estadoliberacion" class="formulario__label">Estado de liberacion:</label>
+        <label for="estadoliberacion" class="formulario__label">Estado de liberación:</label>
         <div class="formulario__grupo-input">
                     <select name="estadoliberacion" class="formulario__input" id="estadoliberacion">
                       <?php if ($row['estadoliberacion'] == 0) { ?>
@@ -99,7 +99,7 @@
 
       <!-- Grupo: matricula Alumno-->
       <div class="formulario__grupo" id="grupo__matriculaAlumno">
-        <label for="matriculaAlumno" class="formulario__label">Matricula alumno</label>
+        <label for="matriculaAlumno" class="formulario__label">Matrícula alumno</label>
         <div class="formulario__grupo-input">
           <input type="text" class="formulario__input" name="matriculaAlumno" id="matriculaAlumno" value="<?php echo $row['matriculaAlumno']  ?>">
           <i class="formulario__validacion-estado fas fa-times-circle"></i>
@@ -185,14 +185,6 @@
                         <option value="Hombre">Hombre</option>       
                         <option value="<?php echo $row['genero']  ?>" selected><?php echo $row['genero']  ?></option>       
                         <option value="Mujer">Mujer</option>
-                        <option value="Heterosexual">Heterosexual</option>            
-                        <option value="Bisexual">Bisexual</option>
-                        <option value="Transformistas">Transformistas</option>            
-                        <option value="Pansexual">Pansexual</option>
-                        <option value="Asexual">Asexual</option>
-                        <option value="Trans">Trans</option>
-                        <option value="Transexual">Transexual</option>
-                        <option value="Trasvesti">Trasvesti</option>
                     </select> 
           <i class="formulario__validacion-estado fas fa-times-circle"></i>
         </div>

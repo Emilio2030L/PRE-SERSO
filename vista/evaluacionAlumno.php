@@ -33,7 +33,7 @@
     <link rel="stylesheet" href="../vista/style/estilos.css" />
 
 
-    <title>Hello, world!</title>
+    <title>Servicio social</title>
   </head>
   <body class="">
     <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
@@ -62,7 +62,7 @@
               <a class="nav-link active" aria-current="page" href="../vista/avanceActividades.php">Avance de actividades</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="../control/evaluacionAlumno.php">Evaluacion Alumnos</a>
+              <a class="nav-link active" aria-current="page" href="../control/evaluacionAlumno.php">Evaluación Alumnos</a>
             </li>
             </ul>
           <ul class="navbar-nav">
@@ -88,8 +88,9 @@
             <th>Programa</th>
             <th>Cuatrimestre</th>
             <th>Grupo</th>
-            <th>Generacion</th>
-            <th style="text-align: center">Evaluación</th>
+            <th>Generación</th>
+            <th style="text-align: center"></th>
+            <th style="text-align: center"></th>
         </thead>
         <tbody>
             <?php while($row=mysqli_fetch_array($query)){ ?>
@@ -103,7 +104,8 @@
               <th style="text-align: center"><?php  echo $row['grupo']?></th>   
               <th style="text-align: center"><?php  echo $row['generacion']?></th>   
 
-              <th style="text-align: center"><a href="../vista/evaluarAlumno.php?id=<?php echo $row['matriculaAlumno'] ?>" class="btn btn-outline-primary" onclick="return confirmarActualizaAlu()">Evaluar</a></th>
+              <th style="text-align: center"><a href="../vista/evaluarAlumno.php?id=<?php echo $row['matriculaAlumno'] ?>" class="btn btn-outline-primary" onclick="return confirmarEvaluar()">Evaluar</a></th>
+              <th style="text-align: center"><a href="../vista/formatoEvaluacionAlu.php?id=<?php echo $row['matriculaAlumno'] ?>" class="btn btn-outline-primary" onclick="return confirmarActualizaAlu()">Formato</a></th>
             </tr>
             <?php } ?>
             </tbody>
@@ -111,7 +113,7 @@
     </div>
 
     <script type="text/javascript">
-        function confirmarActualizaAlu(){
+        function confirmarEvaluar(){
             var respuesta = confirm("¿Confirma evaluar alumno?");
             if(respuesta == true){
                 return true;

@@ -20,6 +20,13 @@
   $row5=mysqli_fetch_array($query5);
   $idA = $row5['idAlta'];
 
+  //$DateAndTime = date('m-l-Y', time());  
+  //echo "Jiutepec, Morelos a  $DateAndTime.";
+
+  $sqlAlumno   = ("SELECT * FROM imagenes WHERE estado = '1' AND lugarImg = 'Noticias'"); 
+  $queryAlumno = mysqli_query($mysqli, $sqlAlumno);
+  $queryNot = mysqli_query($mysqli, $sqlAlumno);
+
 ?>
 
 <html lang="en">
@@ -27,14 +34,14 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@300_600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../vista/style/estilos.css" />
+    <link rel="stylesheet" href="../vista/style/estilos1.css" />
 
-
-    <title>Hello, world!</title>
+    <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+    <title>Servicio social</title>
   </head>
   <body class="">
     <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
@@ -100,6 +107,42 @@
 
     <h1 class="font-weight-bold mb-4 text-center">Sistema web servicio social UPEMOR</h1>
     <!-- Optional JavaScript; choose one of the two! -->
+    <section>
+      <div class="row g-5 container-fluid">
+        <div class="px-lg-5">
+          <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+
+            <div class="carousel-inner">
+                <?php 
+                $i=0;
+                foreach($queryNot as $row){
+                    $actives = '';
+                    if ($i==0) {
+                        $actives='active';
+                    }
+                ?> 
+              <div class="carousel-item min-vh-100 <?= $actives; ?>" style="background-image: url('<?php echo $row['foto']; ?>')">
+                <!--<img src="imagenes/upemor-1.jpg" width="1100" height="700" class="d-md-block w-100"> -->
+                <div class="carousel-caption d-none d-md-block">
+                  <h5 style="color: #0C0B0A">Servicio social</h5>
+                  <p style="color: #0C0B0A"><b><?php echo $row['descripcion']; ?></b></p>
+                </div>
+              </div>
+              <?php $i++;}?>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        </div>
+    </section>
+    <br>
+    <br>
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
@@ -110,4 +153,36 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     -->
   </body>
+
+      <footer class="pie-pagina">
+        <div class="grupo-1">
+            <div class="box">
+                <figure>
+                    <a href="#">
+                        <img src="<?php echo $rowData['foto']; ?>" alt="Logo de SLee Dw">
+                    </a>
+                </figure>
+            </div>
+            <div class="box">
+                <h2>SOBRE NOSOTROS</h2>
+                <p>Dirección: Boulevard Cuauhnáhuac #566, Col. Lomas del Texcal, Jiutepec, Morelos. CP 62550</p>
+                <p>Tel: (777) 229-3517 </p>        
+                <p>Email: informes@upemor.edu.mx</p>
+            </div>
+            <div class="box">
+                <h2>SIGUENOS</h2>
+                <div class="red-social">
+                    <a href="https://www.facebook.com/upemoroficial/" class="fa fa-facebook"></a>
+                    <a href="https://www.instagram.com/upemoroficial/" class="fa fa-instagram"></a>
+                    <a href="https://twitter.com/Upemoroficial" class="fa fa-twitter"></a>
+                    <a href="https://www.youtube.com/user/CanalUPEMOR" class="fa fa-youtube"></a>
+                </div>
+            </div>
+        </div>
+        <div class="grupo-2">
+            <small>&copy; 2022 <b>Aslin Emilio Lopez Mancillas</b> - Todos los Derechos Reservados.</small>
+        </div>
+    </footer>
+
+
 </html>

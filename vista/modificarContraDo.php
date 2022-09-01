@@ -33,7 +33,7 @@
     <link rel="stylesheet" href="../vista/style/estilos.css" />
 
 
-    <title>Hello, world!</title>
+    <title>Servicio social</title>
   </head>
   <body class="">
     <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
@@ -62,7 +62,7 @@
               <a class="nav-link active" aria-current="page" href="../vista/avanceActividades.php">Avance de actividades</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="../control/evaluacionAlumno.php">Evaluacion Alumnos</a>
+              <a class="nav-link active" aria-current="page" href="../vista/evaluacionAlumno.php">Evaluacion Alumnos</a>
             </li>
             </ul>
           <ul class="navbar-nav">
@@ -75,8 +75,8 @@
         </div>
       </div>
     </nav>
-
-    <h1 class="font-weight-bold mb-4 text-center p-3">Modificar contraseña alumno</h1>
+    <h1 class="font-weight-bold mb-4 text-center p-4">Sistema web servicio social UPEMOR</h1>
+    <h5 class="font-weight-bold mb-4 text-center p-3">Modificar contraseña alumno</h5>
 
     <main>
     <form class="formulario" action="../control/cambiarPasswordDo.php" method="post">

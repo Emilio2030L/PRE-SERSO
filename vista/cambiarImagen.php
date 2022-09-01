@@ -32,7 +32,7 @@
     <link rel="stylesheet" href="../vista/style/estilos.css" />
 
 
-    <title>Agregar logotipo</title>
+    <title>Servicio social</title>
   </head>
   <body class="">
     <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
@@ -54,7 +54,7 @@
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="../vista/registroDocente.php">Docente</a></li>
-                <li><a class="dropdown-item" href="../vista/registroUnidad.php">Institución</a></li>
+                <li><a class="dropdown-item" href="../vista/registroUnidad.php">Unidad receptora</a></li>
                 <li><a class="dropdown-item" href="../vista/programaEducativo.php">Programa Educativo</a></li>
               </ul>
             </li>
@@ -85,6 +85,7 @@
       
     </section>
     <section>
+      <h1 class="font-weight-bold mb-4 text-center p-4">Sistema web servicio social UPEMOR</h1>
           <div class="container mt-4">
                     <div class="row"> 
                         <div class="col-md-4">
@@ -93,21 +94,31 @@
                                 <form action="../control/cambiarLogo.php" method="post" enctype="multipart/form-data" >
                                   <input type="hidden" name="cod" value="<?php echo $row['idImg']  ?>">
                                   <p class="text-dark">Id del registro :<?php echo $row['idImg']  ?></p>
-                                  <label class="text-dark">Agrega una descripcion</label>
+                                  <label class="text-dark">Agrega una descripción</label>
                                   <br>
                                   <br>
                                   <textarea name="descripcion" rows="5" cols="40"><?php echo $row['descripcion']  ?></textarea>
                                   <br>
                                   <br>
                                   <select name="lug">
-                                      <option value="logotipo">Logotipo</option>
-                                      <option value="Primera">Primera</option>
-                                      <option value="Segunda">Segunda</option>
-                                      <option value="Tercera">Tercera</option>
+                                      <option value="<?php echo $row['lugarImg']  ?>"><?php echo $row['lugarImg']  ?></option>
+                                      <option value="Logotipo">Logotipo</option>
+                                      <option value="Inicio">Inicio</option>
+                                      <option value="Noticias">Noticias</option> 
                                   </select>
                                   <select name="activ">
-                                      <option value="1">Activa</option>
-                                      <option value="0">Inactiva</option>
+
+                                    <option value="<?php echo $row['estado']  ?>">
+                                      <?php if ($row['estado'] == 1) { ?>
+                                        Activa</option>
+                                        <option value="0">Inactiva</option>
+                                      <?php } ?>
+
+                                      <?php if ($row['estado'] == 0) { ?>
+                                        Inactiva</option>
+                                        <option value="1">Activa</option>
+                                      <?php } ?>
+
                                   </select>
                                   <br>
                                   <br>

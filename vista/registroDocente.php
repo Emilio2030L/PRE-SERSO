@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="../vista/style/estilos.css" />
 
 
-    <title>Hello, world!</title>
+    <title>Servicio social</title>
   </head>
   <body class="">
     <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
@@ -46,7 +46,7 @@
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="../vista/registroDocente.php">Docente</a></li>
-                <li><a class="dropdown-item" href="../vista/registroUnidad.php">Institución</a></li>
+                <li><a class="dropdown-item" href="../vista/registroUnidad.php">Unidad receptora</a></li>
                 <li><a class="dropdown-item" href="../vista/programaEducativo.php">Programa Educativo</a></li>
               </ul>
             </li>
@@ -73,8 +73,8 @@
         </div>
       </div>
     </nav>
-
-    <h1 class="text-dark text-center">Registro docentes</h1>
+    <h1 class="font-weight-bold mb-4 text-center p-4">Sistema web servicio social UPEMOR</h1>
+    <h5 class="text-dark text-center">Registro docentes</h5>
 
     <main>
     <form class="formulario" id="formulario">
@@ -115,14 +115,6 @@
                     <select name="generoProfesor" class="formulario__input" id="generoProfesor">
                         <option value="Hombre" selected>Hombre</option>            
                         <option value="Mujer">Mujer</option>
-                        <option value="Heterosexual">Heterosexual</option>            
-                        <option value="Bisexual">Bisexual</option>
-                        <option value="Transformistas">Transformistas</option>            
-                        <option value="Pansexual">Pansexual</option>
-                        <option value="Asexual">Asexual</option>
-                        <option value="Trans">Trans</option>
-                        <option value="Transexual">Transexual</option>
-                        <option value="Trasvesti">Trasvesti</option>
                     </select> 
           <i class="formulario__validacion-estado fas fa-times-circle"></i>
         </div>

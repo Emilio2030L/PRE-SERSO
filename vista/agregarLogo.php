@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="../vista/style/estilos.css" />
 
 
-    <title>Agregar logotipo</title>
+    <title>Servicio social</title>
   </head>
   <body class="">
     <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
@@ -48,7 +48,7 @@
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="../vista/registroDocente.php">Docente</a></li>
-                <li><a class="dropdown-item" href="../vista/registroUnidad.php">Institución</a></li>
+                <li><a class="dropdown-item" href="../vista/registroUnidad.php">Unidad receptora</a></li>
                 <li><a class="dropdown-item" href="../vista/programaEducativo.php">Programa Educativo</a></li>
               </ul>
             </li>
@@ -75,6 +75,7 @@
         </div>
       </div>
     </nav>
+    <h1 class="font-weight-bold mb-4 text-center p-4">Sistema web servicio social UPEMOR</h1>
     <center><section>
       <div class="mt-5">      
         <div class="mb-4">
@@ -87,9 +88,8 @@
               <br>
               <select name="lug" class="btn-dark">
                   <option value="logotipo">Logotipo</option>
-                  <option value="Primera">Primera</option>
-                  <option value="Segunda">Segunda</option>
-                  <option value="Tercera">Tercera</option>
+                  <option value="Inicio">Inicio</option>
+                  <option value="Noticias">Noticias</option>
               </select>
               <select name="activ" class="btn-dark">
                   <option value="1">Activa</option>
@@ -158,7 +158,7 @@
     </script>
     <script type="text/javascript">
         function confirmarActualiza(){
-            var respuesta = confirm("¿Confirma aztualizar?");
+            var respuesta = confirm("¿Confirma actualizar?");
             if(respuesta == true){
                 return true;
             }else{
